@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Description" content="<#location> weather data" />
+<meta name="Keywords" content="Cumulus, <#location> weather data, weather, data, weather station" />
+<title><#location> weather</title>
+<script type="text/javascript">
+function changeImage(im) {
+	document.images["graphs"].src = im + "?" + new Date().getTime();
+}
+</script>
+
+<link href="weatherstyle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="content">
+<h1><#location> weather</h1>
+<h2 style="text-align: left; text-transform: none;">&nbsp;Latitude&nbsp;<#latitude>&nbsp;&nbsp;&nbsp;&nbsp;Longitude&nbsp;<#longitude>&nbsp;&nbsp;&nbsp;&nbsp;Elevation&nbsp;<#altitude></h2>
+<p>These graphs present the temperature, pressure, rainfall, and wind speed trends for the last <#graphperiod> hours. </p>
+<p>The thumbnail graphs are sampled every ten minutes. Click on a thumbnail to display the corresponding larger graph in the panel above it. The large graphs are sampled every minute. </p>
+
+<table style="border-collapse: collapse; border-spacing: 0;" >
+  <tr>
+	<td colspan="5" style="align-self:center;" ><img src="images/wind.png" id="graphs" title="Weather Graphs" alt="Weather Graphs"/></td>
+  </tr>
+  <tr>
+    <td colspan="5">Click on a thumbnail to show a large graph in the panel above.</td>
+  </tr>
+  
+  <tr>
+    <td class="td_thumbnails"><a onclick='changeImage("images/wind.png")'><img src="images/windsm.png" alt="Wind Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/temp.png")'><img src="images/tempsm.png" alt="Temperature Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/intemp.png")'><img src="images/intempsm.png" alt="Inside Temperature Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/press.png")'><img src="images/presssm.png" alt="Pressure Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/rain.png")'><img src="images/rainsm.png" alt="Rain Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+  </tr>
+  <tr>
+    <td class="td_thumbnails"><a onclick='changeImage("images/windd.png")'><img src="images/winddsm.png" alt="Wind Direction Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/tempm.png")'><img src="images/tempmsm.png" alt="Temp Min/Max Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/hum.png")'><img src="images/humsm.png" alt="Humidity Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/raint.png")'><img src="images/raintsm.png" alt="Today's Rainfall Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/raind.png")'><img src="images/raindsm.png" alt="Daily Rain Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+  </tr>
+  <tr>
+    <td class="td_thumbnails"><a onclick='changeImage("images/intemp.png")'><img src="images/intempsm.png" alt="Int Temp Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/vis.png")'><img src="images/vissm.png" alt="Visible Light Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/uv.png")'><img src="images/uvsm.png" alt="UV Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    <td class="td_thumbnails"><a onclick='changeImage("images/sferic.png")'><img src="images/sfericsm.png" alt="Sferic Graph Thumbnail" width="150" height="100" style="border:0" /></a></td>
+    
+  </tr>
+  <tr>
+    <td colspan="5" class="td_navigation_bar">:<a href="index.htm">now</a>::<a href="gauges.htm">gauges</a>::<a href="today.htm">today</a>::<a href="yesterday.htm">yesterday</a>::<a href="thismonth.htm">this&nbsp;month</a>::<a href="thisyear.htm">this&nbsp;year</a>::<a href="record.htm">records</a>::<a href="monthlyrecord.htm">monthly&nbsp;records</a>::<a href="trends.htm">trends</a>:<#forum><#webcam></td>
+  </tr>
+</table>
+<p class="credits"><br/>
+Page updated <#update><br/>
+powered by
+<a href="http://sandaysoft.com/products/cumulus" target="_blank">Cumulus</a> v<#version> (<#build>)
+</p>
+</div>
+</body>
+</html>
